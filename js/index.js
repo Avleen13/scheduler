@@ -20,7 +20,7 @@ const course = {
 document.getElementById(`name`).innerHTML = course.name;
 document.getElementById(`code`).innerHTML = course.code;
 document.getElementById(`instructor`).innerHTML = course.instructor;
-document.getElementById(`start`).innerHTML = `${start.term} ${start.year}`;
+document.getElementById(`start`).innerHTML = `${course.start.term} ${course.start.year}`;
 document.getElementById(`weeks`).innerHTML = course.weeks;
 document.getElementById(`duration`).innerHTML = getDurationFromMinutes(course.duration);
 
