@@ -20,7 +20,7 @@ const course = {
 document.getElementById(`name`).innerHTML = course.name;
 document.getElementById(`code`).innerHTML = course.code;
 document.getElementById(`instructor`).innerHTML = course.instructor;
-document.getElementById(`start`).innerHTML = ` ${start.term} ${start.year}`;
+document.getElementById(`start`).innerHTML = `${start.term} ${start.year}`;
 document.getElementById(`weeks`).innerHTML = course.weeks;
 document.getElementById(`duration`).innerHTML = getDurationFromMinutes(course.duration);
 
@@ -39,11 +39,6 @@ LAB:
             - Always round down:  Math.floor(1.999)
 */
 
-const start = { term: `Fall`, year: 2019 };
-document.getElementById(`start`).innerHTML = `Hi! ${start.term}, ${start.year}`;
-
-
-function getDurationFromMinutes(minutes) {
 
     function getDurationFromMinutes(minutes) {
         var num = minutes;
@@ -53,5 +48,3 @@ function getDurationFromMinutes(minutes) {
        var rminutes = Math.round(minutes);
        return num + " minutes = " + rhours + " hour(s) and " + rminutes + " minute(s).";
 }
-
-getDurationFromMinutes(160);  // 2 hr, 40 min
