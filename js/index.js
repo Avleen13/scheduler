@@ -18,6 +18,15 @@ const allCourses = [
     weeks: 15,
     breaks: true,
     duration: 160
+  },
+  {
+    name: ` Web Development`,
+    code: `WDDM-117`,
+    instructor: `Rocco Panacci`,
+    start: { term: `Fall`, year: 2019 },
+    weeks: 15,
+    breaks: true,
+    duration: 160
   }
 ];
 
@@ -65,3 +74,25 @@ function getCourseAsHtmlString(course) {
 // join() the NEW Array to a new String of HTML instructions (<article>)
 // Assign the String to the document
 // Test by adding a new Object to allCourses
+
+function getCourseAsHtmlString(course) {
+  return `
+  <article class="course">
+  <h3 id="name">${course.name}</h3>
+  <ul>
+    <li>Course Code: <strong>${course.code}</strong></li>
+    <li>Instructor: <strong>${course.instructor}</strong></li>
+    <li>Start: <strong>${course.start.term} ${course.start.year}</strong></li>
+    <li>
+      Weeks: <strong>${course.weeks}</strong>
+      <ul>
+        <li>Includes Break: <strong>${course.breaks}</strong></li>
+      </ul>
+    </li>
+    <li>Duration: <strong>${getDurationFromMinutes(course.duration)}</strong></li>
+  </ul>
+</article>`;
+    }
+
+
+document.getElementById('course-content').innerHTML = allCourses.map(getCourseAsHtmlString).join('\n');
